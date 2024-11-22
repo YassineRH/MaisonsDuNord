@@ -5,6 +5,7 @@ import AppartmentDetailsHeader from "./AppartmentDetailsHeader";
 import ApartmentDetailsModalEditing from "./ApartmentDetailsModalEditing";
 import ApartmentDetailsModalRead from "./ApartmentDetailsModalRead";
 import ApartmentDetailsModalFooter from "./ApartmentDetailsModalFooter";
+import Payments from "./Payments";
 
 export default function ApartmentDetailsModal() {
   const {
@@ -69,17 +70,16 @@ export default function ApartmentDetailsModal() {
             <ApartmentDetailsModalEditing
               apartmentInfo={apartmentInfo}
               handleInputChange={handleInputChange}
-              handleAddPayment={handleAddPayment}
-              handleDeletePayment={handleDeletePayment}
             />
           ) : (
-            <ApartmentDetailsModalRead
-              apartmentInfo={apartmentInfo}
-              handleInputChange={handleInputChange}
-              handleAddPayment={handleAddPayment}
-              handleDeletePayment={handleDeletePayment}
-            />
+            <ApartmentDetailsModalRead apartmentInfo={apartmentInfo} />
           )}
+          <Payments
+            handleAddPayment={handleAddPayment}
+            payments={apartmentInfo.payments}
+            handleDeletePayment={handleDeletePayment}
+            isEditing={isEditing}
+          />
           <ApartmentDetailsModalFooter
             apartmentInfo={apartmentInfo}
             payed={payed}

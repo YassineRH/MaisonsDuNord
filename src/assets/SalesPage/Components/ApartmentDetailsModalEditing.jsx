@@ -1,6 +1,5 @@
 import { HStack, Input, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import Payments from "./Payments";
 
 const list = [
   { label: "Prix par m² en DH", name: "price" },
@@ -8,12 +7,7 @@ const list = [
   { label: "Parking", name: "parking" },
 ];
 
-const ApartmentDetailsModalEditing = ({
-  handleInputChange,
-  apartmentInfo,
-  handleAddPayment,
-  handleDeletePayment,
-}) => {
+const ApartmentDetailsModalEditing = ({ handleInputChange, apartmentInfo }) => {
   return (
     <>
       <VStack spacing={6} align="center" w="full">
@@ -68,11 +62,6 @@ const ApartmentDetailsModalEditing = ({
           </HStack>
         ))}
       </VStack>
-      <Payments
-        handleAddPayment={handleAddPayment}
-        payments={apartmentInfo.payments}
-        handleDeletePayment={handleDeletePayment}
-      />
     </>
   );
 };

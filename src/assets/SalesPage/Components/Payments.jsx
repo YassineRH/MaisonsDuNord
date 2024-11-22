@@ -11,7 +11,19 @@ import {
 } from "@chakra-ui/react";
 import AddPayment from "./AddPayment";
 
-const Payments = ({ payments, handleAddPayment, handleDeletePayment }) => {
+const Payments = ({
+  payments,
+  handleAddPayment,
+  handleDeletePayment,
+  isEditing,
+}) => {
+  if (payments.length === 0 && !isEditing)
+    return (
+      <Heading p={10} textAlign="center">
+        {"Aucun paiment n'a été effectué"}
+      </Heading>
+    );
+
   return (
     <>
       <Heading
@@ -76,7 +88,7 @@ const Payments = ({ payments, handleAddPayment, handleDeletePayment }) => {
                 </Td>
               </Tr>
             ))}
-            <AddPayment handleAddPayment={handleAddPayment} />
+            {isEditing && <AddPayment handleAddPayment={handleAddPayment} />}
           </Tbody>
         </Table>
       </Box>
