@@ -60,7 +60,7 @@ const BuildingButton = ({ destination }) => {
             textAlign: "center",
           }}
         >
-          Bâtiment {destination}
+          {localStorage.getItem(destination)}
         </div>
       </div>
     </Link>

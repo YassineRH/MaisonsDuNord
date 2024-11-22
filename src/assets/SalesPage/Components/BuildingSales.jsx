@@ -24,7 +24,7 @@ const BuildingSales = ({ buildingName }) => {
         minWidth={{ base: "200px", md: "600px" }}
       >
         <Text fontSize="2xl" fontWeight="bold" color="#ae8957">
-          Bâtiment {buildingName}
+          {localStorage.getItem(buildingName)}
         </Text>
         <VStack spacing={4} mt={4} align="stretch">
           <HStack justify="space-between">

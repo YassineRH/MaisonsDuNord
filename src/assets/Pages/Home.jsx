@@ -12,10 +12,15 @@ const HomePage = () => {
 };
 
 export function loader() {
+  localStorage.setItem("A", "Local Commercial A");
+  localStorage.setItem("B", "Bâtiment B");
+  localStorage.setItem("C", "Bâtiment C");
+
   const currDate = new Date();
-  const prevDate = localStorage.getItem("date");
-  const available = currDate - prevDate < 1000 * 60 * 60;
-  if (!available) localStorage.removeItem("token");
+  const prevDate = new Date(localStorage.getItem("date"));
+  const available = currDate - prevDate < 3600000;
+
+  if (!available) localStorage.clear();
   return null;
 }
 

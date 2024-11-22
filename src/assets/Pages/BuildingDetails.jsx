@@ -1,7 +1,7 @@
 import React from "react";
 import BuildingDetailsTable from "../SalesPage/Components/BuildingDetailsTable";
-import { useParams } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import ApartmentDetailsModal from "../SalesPage/Components/ApartmentDetailsModal";
 import { ApartmentProvider } from "../SalesPage/context/ApartmentContext";
 import BuildingSales from "../SalesPage/Components/BuildingSales";
@@ -12,8 +12,39 @@ const BuildingDetailsPage = () => {
     (app) => app.building === buildingId
   );
 
+  const navigate = useNavigate();
+
   return (
     <Box h="100vh">
+      <Flex
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        w="100%"
+        mb={6}
+      >
+        <Button
+          onClick={() => navigate("/ventes")}
+          bg="#ae8957"
+          color="white"
+          variant="solid"
+          position="relative"
+          left={4}
+          mt={4}
+          _hover={{ bg: "#594535" }}
+        >
+          Retour
+        </Button>
+        <Heading
+          textAlign="center"
+          flex="1"
+          fontSize={{ base: "2xl", md: "5xl" }}
+          color="#ae8957"
+          mt={4}
+        >
+          {localStorage.getItem(buildingId)}
+        </Heading>
+      </Flex>
       <ApartmentProvider>
         <ApartmentDetailsModal />
         <BuildingDetailsTable data={data} />
