@@ -1,15 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./assets/Pages/Root";
 import SalesPage, { loader as SalesLoader } from "./assets/Pages/Sales";
-import HomePage from "./assets/Pages/Home";
+import HomePage, { loader as HomeLoader } from "./assets/Pages/Home";
 import BuildingDetailsPage, {
   action as SubmitApartment,
 } from "./assets/Pages/BuildingDetails";
+import ErrorPage from "./assets/Pages/Error";
 //hzrhnqm
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    loader: HomeLoader,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
