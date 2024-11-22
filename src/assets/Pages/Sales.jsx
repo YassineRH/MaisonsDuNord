@@ -1,7 +1,7 @@
 import { Flex, Box, Heading } from "@chakra-ui/react";
-import BuildingButton from "../Components/BuildingButton";
-import TotalSales from "../Components/TotalSales";
-import Legend from "../Components/Legend";
+import BuildingButton from "../SalesPage/Components/BuildingButton";
+import TotalSales from "../SalesPage/Components/TotalSales";
+import Legend from "../SalesPage/Components/Legend";
 
 const array = ["A", "B", "C"];
 

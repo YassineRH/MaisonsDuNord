@@ -1,10 +1,10 @@
 import React from "react";
-import BuildingDetailsTable from "../Components/BuildingDetailsTable";
+import BuildingDetailsTable from "../SalesPage/Components/BuildingDetailsTable";
 import { useParams } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
-import ApartmentDetailsModal from "../Components/ApartmentDetailsModal";
-import { ApartmentProvider } from "../context/ApartmentContext";
-import BuildingSales from "../Components/BuildingSales";
+import ApartmentDetailsModal from "../SalesPage/Components/ApartmentDetailsModal";
+import { ApartmentProvider } from "../SalesPage/context/ApartmentContext";
+import BuildingSales from "../SalesPage/Components/BuildingSales";
 
 const BuildingDetailsPage = () => {
   const { buildingId } = useParams();

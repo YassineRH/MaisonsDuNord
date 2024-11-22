@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RootLayout from "./SalesPage/Pages/Root";
-import SalesPage, { loader as SalesLoader } from "./SalesPage/Pages/Sales";
-import HomePage from "./SalesPage/Pages/Home";
+import RootLayout from "./assets/Pages/Root";
+import SalesPage, { loader as SalesLoader } from "./assets/Pages/Sales";
+import HomePage from "./assets/Pages/Home";
 import BuildingDetailsPage, {
   action as SubmitApartment,
-} from "./SalesPage/Pages/BuildingDetails";
+} from "./assets/Pages/BuildingDetails";
 //hzrhnqm
 const router = createBrowserRouter([
   {
