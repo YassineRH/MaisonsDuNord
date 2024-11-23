@@ -8,7 +8,7 @@ const TotalSales = () => {
     <Box justifyContent="center" alignItems="center">
       <VStack>
         {array.map((item) => (
-          <BuildingSales key={item} buildingName={item} />
+          <BuildingSales key={item} building={item} />
         ))}
       </VStack>
     </Box>

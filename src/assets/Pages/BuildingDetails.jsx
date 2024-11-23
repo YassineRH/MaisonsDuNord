@@ -5,6 +5,7 @@ import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import ApartmentDetailsModal from "../SalesPage/Components/ApartmentDetailsModal";
 import { ApartmentProvider } from "../SalesPage/context/ApartmentContext";
 import BuildingSales from "../SalesPage/Components/BuildingSales";
+import BuildingName from "../utilities/BuildingName";
 
 const BuildingDetailsPage = () => {
   const { buildingId } = useParams();
@@ -42,13 +43,13 @@ const BuildingDetailsPage = () => {
           color="#ae8957"
           mt={4}
         >
-          {localStorage.getItem(buildingId)}
+          {BuildingName(buildingId)}
         </Heading>
       </Flex>
       <ApartmentProvider>
         <ApartmentDetailsModal />
         <BuildingDetailsTable data={data} />
-        <BuildingSales buildingName={buildingId} />
+        <BuildingSales building={buildingId} />
       </ApartmentProvider>
     </Box>
   );

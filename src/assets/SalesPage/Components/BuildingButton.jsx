@@ -1,6 +1,7 @@
 import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 import { Link } from "react-router-dom";
+import BuildingName from "../../utilities/BuildingName";
 
 const array = [
   { label: "Réservation", color: "#f57c00" },
@@ -60,7 +61,7 @@ const BuildingButton = ({ destination }) => {
             textAlign: "center",
           }}
         >
-          {localStorage.getItem(destination)}
+          {BuildingName(destination)}
         </div>
       </div>
     </Link>

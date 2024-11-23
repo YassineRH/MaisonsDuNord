@@ -12,10 +12,6 @@ const HomePage = () => {
 };
 
 export function loader() {
-  localStorage.setItem("A", "Local Commercial A");
-  localStorage.setItem("B", "Bâtiment B");
-  localStorage.setItem("C", "Bâtiment C");
-
   const currDate = new Date();
   const prevDate = new Date(localStorage.getItem("date"));
   const available = currDate - prevDate < 3600000;

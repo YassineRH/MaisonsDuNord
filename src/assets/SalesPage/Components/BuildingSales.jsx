@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, VStack, Text, HStack } from "@chakra-ui/react";
+import BuildingName from "../../utilities/BuildingName";
 
-const BuildingSales = ({ buildingName }) => {
+const BuildingSales = ({ building }) => {
   const { revenue, received, remaining } = JSON.parse(
     localStorage.getItem("sales")
-  ).find((item) => item.building === buildingName);
+  ).find((item) => item.building === building);
 
   return (
     <Box
@@ -24,7 +25,7 @@ const BuildingSales = ({ buildingName }) => {
         minWidth={{ base: "200px", md: "600px" }}
       >
         <Text fontSize="2xl" fontWeight="bold" color="#ae8957">
-          {localStorage.getItem(buildingName)}
+          {BuildingName(building)}
         </Text>
         <VStack spacing={4} mt={4} align="stretch">
           <HStack justify="space-between">
