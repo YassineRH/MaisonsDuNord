@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { Box, Link, HStack } from "@chakra-ui/react";
 
 const MainNavigation = () => {
+  const token = localStorage.getItem("token");
+  if (!token) return null;
   return (
     <Box
       as="nav"
@@ -38,7 +40,7 @@ const MainNavigation = () => {
           _focus={{ outline: "none" }}
           px={2}
         >
-          Home
+          Logout
         </Link>
         <Link
           as={NavLink}

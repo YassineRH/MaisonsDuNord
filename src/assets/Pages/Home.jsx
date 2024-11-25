@@ -1,14 +1,10 @@
 import React from "react";
 import Login from "../HomePage/Login";
+import Logout from "../HomePage/Logout";
 
 const HomePage = () => {
   const token = localStorage.getItem("token");
-  return (
-    <>
-      {!token && <Login />}
-      <h1>Test</h1>
-    </>
-  );
+  return <>{token ? <Logout /> : <Login />}</>;
 };
 
 export function loader() {

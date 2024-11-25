@@ -28,10 +28,11 @@ export default function ApartmentDetailsModal() {
     setApartmentInfo(JSON.parse(JSON.stringify(apartment)));
   }, [apartment, isOpen]);
 
-  function handleInputChange(input, value) {
+  function handleInputChange(input, value, index, field) {
     setApartmentInfo((prev) => {
       const updated = JSON.parse(JSON.stringify(prev));
-      updated[input] = value;
+      if (field) updated[input][index][field] = value;
+      else updated[input] = value;
       return updated;
     });
   }
@@ -82,6 +83,7 @@ export default function ApartmentDetailsModal() {
             payments={apartmentInfo.payments}
             handleDeletePayment={handleDeletePayment}
             isEditing={isEditing}
+            handleInputChange={handleInputChange}
           />
           <ApartmentDetailsModalFooter
             apartmentInfo={apartmentInfo}

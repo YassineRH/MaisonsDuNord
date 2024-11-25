@@ -1,15 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../firebase";
 import { Box, Input, Button, Text, VStack, useToast } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const toast = useToast();
-  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,8 +33,7 @@ const Login = () => {
         duration: 4000,
         isClosable: true,
       });
-
-      navigate("/ventes");
+      window.location.href = "/ventes";
     } catch (err) {
       toast({
         title: "Login failed!",
