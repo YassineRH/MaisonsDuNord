@@ -44,7 +44,6 @@ const BuildingButton = ({ destination }) => {
         <PieChart
           radius={40}
           lineWidth={20}
-          paddingAngle={2}
           data={pieChartData}
           animate
           animationDuration={1000}
