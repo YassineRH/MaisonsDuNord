@@ -22,8 +22,11 @@ const Login = () => {
         password
       );
       const token = await userCredential.user.getIdToken();
+      const userId = userCredential.user.uid;
       const currDate = new Date();
+
       localStorage.setItem("token", token);
+      localStorage.setItem("user", userId);
       localStorage.setItem("date", currDate);
 
       toast({

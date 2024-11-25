@@ -26,6 +26,8 @@ export const ApartmentProvider = ({ children }) => {
 
   const rest = Number(apartmentPrice) - Number(payed);
 
+  const admin = "46il9KcEGdZzkn74aYxYgx23vpK2";
+
   function ModalClose() {
     onClose();
     setIsEditing(false);
@@ -44,6 +46,7 @@ export const ApartmentProvider = ({ children }) => {
         payed,
         apartmentPrice,
         rest,
+        admin,
       }}
     >
       {children}

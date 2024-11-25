@@ -18,9 +18,11 @@ export default function ApartmentDetailsModal() {
     payed,
     apartmentPrice,
     rest,
+    admin,
   } = useApartmentContext();
   const [apartmentInfo, setApartmentInfo] = useState(apartment);
   const canSubmit = JSON.stringify(apartmentInfo) !== JSON.stringify(apartment);
+  const isAdmin = admin === localStorage.getItem("user");
 
   useEffect(() => {
     setApartmentInfo(JSON.parse(JSON.stringify(apartment)));
@@ -65,6 +67,7 @@ export default function ApartmentDetailsModal() {
             name={apartmentInfo.name}
             onClose={ModalClose}
             setIsEditing={setIsEditing}
+            isAdmin={isAdmin}
           />
           {isEditing ? (
             <ApartmentDetailsModalEditing

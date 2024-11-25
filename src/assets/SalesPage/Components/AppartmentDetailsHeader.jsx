@@ -5,6 +5,7 @@ const AppartmentDetailsHeader = ({
   onClose,
   setIsEditing,
   isEditing,
+  isAdmin,
 }) => {
   return (
     <Box w="full" p={4} borderRadius="lg">
@@ -56,7 +57,7 @@ const AppartmentDetailsHeader = ({
           </Text>
         </HStack>
 
-        {!isEditing && (
+        {!isEditing && isAdmin && (
           <Button
             onClick={() => setIsEditing(true)}
             bg="#ae8957"
