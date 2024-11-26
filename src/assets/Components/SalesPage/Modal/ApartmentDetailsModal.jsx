@@ -62,7 +62,12 @@ export default function ApartmentDetailsModal() {
     >
       <ModalOverlay />
       <ModalContent height="100vh" width="100vw" bg="#f4f1eb">
-        <ModalBody padding={0} height="100%" width="100%" overflowY="auto">
+        <ModalBody
+          paddingY={{ base: 10, md: 0 }}
+          height="100%"
+          width="100%"
+          overflowY="auto"
+        >
           <AppartmentDetailsHeader
             isEditing={isEditing}
             name={apartmentInfo.name}

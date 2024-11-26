@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "../HomePage/Login";
-import Logout from "../HomePage/Logout";
+import Login from "../Components/HomePage/Login";
+import Logout from "../Components/HomePage/Logout";
 
 const HomePage = () => {
   const token = localStorage.getItem("token");

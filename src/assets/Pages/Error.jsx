@@ -3,11 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
-  const errorMessage = "Test";
-  const errorDetails = "another test";
-  const handleGoHome = () => {
-    navigate("/");
-  };
+  const errorMessage = "Expired Session";
+  const errorDetails = "try logging in";
 
   return (
     <Box
@@ -32,7 +29,7 @@ const ErrorPage = () => {
           {errorDetails}
         </Text>
         <Button
-          onClick={handleGoHome}
+          onClick={() => navigate("/")}
           colorScheme="teal"
           width="full"
           bg="teal.500"

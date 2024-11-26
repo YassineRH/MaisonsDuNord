@@ -1,5 +1,5 @@
 import { Tr, Td } from "@chakra-ui/react";
-import { useApartmentContext } from "../context/ApartmentContext";
+import { useApartmentContext } from "./context/ApartmentContext";
 
 const TableRow = ({ appartment }) => {
   const { onOpen, setApartment } = useApartmentContext();
