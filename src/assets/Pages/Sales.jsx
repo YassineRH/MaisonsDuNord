@@ -32,6 +32,7 @@ const SalesPage = () => {
 export async function loader() {
   const token = localStorage.getItem("token");
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
   const response = await fetch(backendUrl, {
     method: "GET",
     headers: { Authorization: `Bearer ${token}` },

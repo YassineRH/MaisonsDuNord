@@ -1,7 +1,5 @@
 const buildings = { A: "Local Commercial A", B: "Bâtiment B", C: "Bâtiment C" };
 
-const BuildingName = (buildingName) => {
+export default function BuildingName(buildingName) {
   return buildings[buildingName];
-};
-
-export default BuildingName;
+}

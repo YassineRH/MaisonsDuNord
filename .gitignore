@@ -2,6 +2,8 @@ node_modules/
 .vscode
 eslint.config.js
 .env
-firebase.js
 build
 dist
+firebase.json
+.firebaserc
+public/index.html
