@@ -6,4 +6,4 @@ build
 dist
 firebase.json
 .firebaserc
-public/index.html
+.firebase
