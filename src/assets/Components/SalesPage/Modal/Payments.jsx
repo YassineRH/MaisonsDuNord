@@ -56,9 +56,9 @@ const Payments = ({
               <Th color="white" fontWeight="bold" minW="180px">
                 Status
               </Th>
-              <Th color="white" fontWeight="bold" minW="180px">
+              {isEditing && <Th color="white" fontWeight="bold" minW="180px">
                 Action
-              </Th>
+              </Th>}
             </Tr>
           </Thead>
           <Tbody>
@@ -222,7 +222,7 @@ const Payments = ({
                     </Select>
                   )}
                 </Td>
-                <Td>
+                {isEditing && <Td>
                   <Button
                     onClick={() => handleDeletePayment(index)}
                     colorScheme="red"
@@ -238,7 +238,7 @@ const Payments = ({
                   >
                     Delete
                   </Button>
-                </Td>
+                </Td>}
               </Tr>
             ))}
             {isEditing && <AddPayment handleAddPayment={handleAddPayment} />}
